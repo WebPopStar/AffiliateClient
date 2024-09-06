@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const UseApi = () => {
   // operation characteristics
   const [, setTime] = useAtom(timeAtom);
-  const [token, setToken] = useAtom(tokenAtom);
+  const [, setToken] = useAtom(tokenAtom);
   const [op, setOp] = useState({
     appErr: null,
     servreErr: null,
@@ -19,11 +19,11 @@ const UseApi = () => {
       "Content-Type": "application/json",
     },
   };
-  const toke = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
   // Post Op Configuration
   const postConfig = {
     headers: {
-      Authorization: `Bearer ${toke}`,
+      Authorization: `Bearer ${token}`,
     },
   };
   //register

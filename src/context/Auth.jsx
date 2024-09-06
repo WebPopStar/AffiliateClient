@@ -20,10 +20,10 @@ const AuthProvider = ({ children }) => {
   const [dData, setDData] = useState([]);
   const { GetTime } = UseApi();
   useEffect(() => {
-    const toke = localStorage.getItem("token");
-    setToken(toke);
-    if (!toke) {
-      navigate("/login");
+    const token = localStorage.getItem("token");
+    setToken(token);
+    if (!token) {
+      // navigate("/login");
     }
     if (location.pathname == "/admin/manage/view") {
       GetTime();
