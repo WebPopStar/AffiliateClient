@@ -1,4 +1,4 @@
-import Login from "../../auth/LogIn";
+import Login from "../../auth/Login";
 import SignHeader from "../../components/sign/SignHeader";
 
 const Log = () => {
