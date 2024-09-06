@@ -6,7 +6,7 @@ import FormikErr from "../../../errors/FormikErr";
 import AppServerErr from "../../../errors/AppServerErr";
 import Input from "./Input";
 import PsdShowBtn from "./PsdShowBtn";
-import SignButton from "../../sign/signButton";
+import SignButton from "../../sign/SignButton";
 
 const ChangePsd = ({ setShow }) => {
   const [showCurrent, setShowCurrent] = useState(false);
