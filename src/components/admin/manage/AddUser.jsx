@@ -1,4 +1,4 @@
-import Register from "../../../auth/register";
+import Register from "../../../auth/Register";
 
 
 const AddUser = () => {

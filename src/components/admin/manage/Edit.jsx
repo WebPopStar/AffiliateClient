@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router";
-import Heading from "../../sign/heading";
+import Heading from "../../sign/Heading";
 import AppServerErr from "../../../errors/AppServerErr";
 import FormikErr from "../../../errors/FormikErr";
 import Input from "../../sign/Input";
-import SignButton from "../../sign/signButton";
+import SignButton from "../../sign/SignButton";
 import UseApi from "../../../hooks/useApi";
 import CancelBtn from "../../sign/CancelBtn";
 const Edit = ({ label }) => {

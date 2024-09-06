@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 import NavLinks from "./LInks";
 import NavPayment from "./Payment";
 import { useAtom } from "jotai";
-import { showNavAtom } from "../../../../store";
+import { showNavAtom } from "../../../../store/index";
 
 const Navbar = () => {
     const [showNav, setShowNav] = useAtom(showNavAtom);

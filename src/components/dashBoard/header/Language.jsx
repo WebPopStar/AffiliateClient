@@ -1,6 +1,6 @@
 import { useAtom } from "jotai"
 import React from "react"
-import { languageAtom } from "../../../store"
+import { languageAtom } from "../../../store/index"
 const Language = ({ className }) => {
     const [lang, setLanguage] = useAtom(languageAtom)
     return (

@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
 import React from "react";
-import { showNavAtom } from "../../../../store";
+import { showNavAtom } from "../../../../store/index";
 
 const NavItem = ({ label, handle }) => {
   const [showNav] = useAtom(showNavAtom);

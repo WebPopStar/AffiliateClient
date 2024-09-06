@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Button from "./Button";
 import { useNavigate } from "react-router";
-import { showNavAtom } from "../../../store";
+import { showNavAtom } from "../../../store/index";
 import { useAtom } from "jotai";
 const Account = ({ setShow }) => {
   const navigate = useNavigate();

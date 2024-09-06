@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import History from "./History";
 import { useAtom } from "jotai";
-import { timeAtom } from "../../../store";
+import { timeAtom } from "../../../store/index";
 import TimeFrame from "./TimeFrame";
 const PaymentHistroy = () => {
   const [timeFrame, setTimeFrame] = useState({ year: 0, month: 0 });

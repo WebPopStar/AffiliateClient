@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import { totalStatsAtom } from "../../../store";
+import { totalStatsAtom } from "../../../store/index";
 import { Tooltip } from "react-tooltip";
 
 const TotalStats = ({ filtTotal, setFiltClient }) => {

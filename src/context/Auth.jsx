@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAtom } from "jotai";
-import { tokenAtom } from "../store";
+import { tokenAtom } from "../store/index";
 import UseApi from "../hooks/useApi";
 
 const AuthContext = createContext();

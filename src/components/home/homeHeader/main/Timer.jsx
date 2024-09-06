@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PaymentTimer from "./PaymentTimer";
 import { useLocation, useNavigate } from "react-router";
 import { useAtom } from "jotai";
-import { timeAtom } from "../../../../store";
+import { timeAtom } from "../../../../store/index";
 import UseApi from "../../../../hooks/useApi";
 
 const Timer = () => {

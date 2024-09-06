@@ -5,7 +5,7 @@ import AppServerErr from "../errors/AppServerErr";
 import Heading from "../components/sign/Heading";
 import Input from "../components/sign/Input";
 import FormikErr from "../errors/FormikErr";
-import SignButton from "../components/sign/signButton";
+import SignButton from "../components/sign/SignButton";
 import UseApi from "../hooks/useApi";
 import { useNavigate } from "react-router";
 import Hint from "../components/sign/Hint"

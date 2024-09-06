@@ -2,7 +2,7 @@ import { useAtom } from "jotai";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Tooltip } from "react-tooltip";
-import { payHistoryAtom } from "../../../store";
+import { payHistoryAtom } from "../../../store/index";
 
 const History = ({ timeFrame }) => {
   const [histroy, setHistory] = useAtom(payHistoryAtom);

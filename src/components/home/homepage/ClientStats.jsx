@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import { clientAtom } from "../../../store";
+import { clientAtom } from "../../../store/index";
 
 const ClientStats = ({ filtTotal, filtClient }) => {
   const [client, setClient] = useAtom(clientAtom);

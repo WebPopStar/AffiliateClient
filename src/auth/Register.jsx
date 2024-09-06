@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import SignButton from "../components/sign/signButton";
+import SignButton from "../components/sign/SignButton";
 import FormikErr from "../errors/FormikErr";
 import AppServerErr from "../errors/AppServerErr";
-import Heading from "../components/sign/heading";
+import Heading from "../components/sign/Heading";
 import UseApi from "../hooks/useApi";
 import Input from "../components/sign/Input";
 import { useNavigate } from "react-router";

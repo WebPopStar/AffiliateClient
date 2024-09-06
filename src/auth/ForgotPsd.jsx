@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as yup from 'yup'
 import AppServerErr from "../errors/AppServerErr";
-import Heading from "../components/sign/heading";
+import Heading from "../components/sign/Heading";
 import Input from "../components/sign/Input";
 import FormikErr from "../errors/FormikErr";
 import SignButton from "../components/sign/signButton";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UseApi from "../../../../hooks/useApi";
 import { useAtom } from "jotai";
-import { monthlyProfitAtom } from "../../../../store";
+import { monthlyProfitAtom } from "../../../../store/index";
 
 const PaymentTimer = ({ registerDate, currentTime }) => {
   const { GetTime } = UseApi();

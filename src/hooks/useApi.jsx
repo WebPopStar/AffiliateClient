@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { CHANGEPSD, GETTIME, LOGIN, REGISTER } from "../constant/api";
 import { useAtom } from "jotai";
-import { timeAtom, tokenAtom } from "../store";
+import { timeAtom, tokenAtom } from "../store/index";
 import { useNavigate } from "react-router";
 const UseApi = () => {
   // operation characteristics
