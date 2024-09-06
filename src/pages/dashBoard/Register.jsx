@@ -1,4 +1,4 @@
-import Register from "../../auth/register";
+import Register from "../../auth/Register";
 import RegComment from "../../components/sign/RegComment";
 const Regist = () => {
     return (
