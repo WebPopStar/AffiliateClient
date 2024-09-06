@@ -1,4 +1,4 @@
-import HomeHeader from "../../components/home/homeHeader";
+import HomeHeader from "../../components/home/homeHeader/Index";
 import { Outlet } from "react-router";
 
 const HomeLayout = () => {
