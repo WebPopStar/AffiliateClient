@@ -1,0 +1,72 @@
+import { useFormik } from "formik";
+import React, { useState } from "react";
+import * as yup from 'yup'
+import AppServerErr from "../errors/AppServerErr";
+import Heading from "../components/sign/heading";
+import Input from "../components/sign/Input";
+import FormikErr from "../errors/FormikErr";
+import SignButton from "../components/sign/signButton";
+import UseApi from "../hooks/useApi";
+import { useNavigate } from "react-router";
+import Hint from "../components/sign/Hint"
+const ForgotPsd = ({ setShow }) => {
+    const navigate = useNavigate()
+    const { op, ForgotPsd } = UseApi();
+
+    const formSchema = yup.object({
+        affiliateId: yup.string().required("Affiliate Id is required"),
+        email: yup.string().email().required("email is required"),
+    })
+    const formik = useFormik({
+        initialValues: {
+            affiliateId: '',
+            email: '',
+        },
+        onSubmit: ({ affiliateId, email }) => {
+            ForgotPsd({ affiliateId, password })
+        },
+        validationSchema: formSchema
+    })
+    return (
+        <>
+            <Heading label={"Forgot Your Password?"} />
+            <AppServerErr>
+                {op.serverErr === "Network Error" ? op.serverErr : null}
+            </AppServerErr>
+            <form className="mt-6 font-sans" onSubmit={formik.handleSubmit}>
+                <Input
+                    label={"Affiliate ID"}
+                    type={"text"}
+                    name={"affiliateId"}
+                    value={formik.values.affiliateId}
+                    onChange={formik.handleChange("affiliateId")}
+                />
+                <FormikErr
+                    touched={formik.touched.affiliateId}
+                    errors={formik.errors.affiliateId}
+                />
+                <AppServerErr>
+                    {op.appErr === "ID already exists, try with a different one" &&
+                        op.appErr}
+                </AppServerErr>
+                <Input
+                    label={"Eamil"}
+                    type={"email"}
+                    name={"email"}
+                    value={formik.values.email}
+                    onChange={formik.handleChange("email")}
+                />
+                <FormikErr
+                    touched={formik.touched.email}
+                    errors={formik.errors.email}
+                />
+                <SignButton label={"Submit"} />
+                <Hint label={'Cancel'}
+                    className='w-full px-4 py-1 hover:no-underline !text-[16px] tracking-wide font-semibold text-white bg-gray-600 '
+                    handle={() => setShow(false)} />
+            </form>
+
+        </>
+    )
+}
+export default ForgotPsd;
