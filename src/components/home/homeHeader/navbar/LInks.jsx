@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import NavUList from "./Ulist";
+import NavUList from "./UList";
 import NavListItem from "./ListItem";
 
 const NavLinks = () => {

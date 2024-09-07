@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import NavListItem from "./ListItem";
-import NavUList from "./Ulist";
+import NavUList from "./UList";
 
 const NavPayment = () => {
     const navigate = useNavigate()
