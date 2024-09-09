@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import NavButton from "./NavButton";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import { useAtom } from "jotai";
+import { tokenAtom } from "../../../store";
 
 const HiddenBar = ({ collapse, setCollapse }) => {
   const navigate = useNavigate();
+  const [token] = useAtom(tokenAtom);
   return (
     <div
       className={`${
@@ -23,11 +26,13 @@ const HiddenBar = ({ collapse, setCollapse }) => {
         className={"text-[14px]"}
         handle={() => navigate("/homepage")}
       />
-      <NavButton
-        label="ADMIN"
-        className={"text-[14px]"}
-        handle={() => navigate("/ADMIN")}
-      />
+      {token && (
+        <NavButton
+          label="ADMIN"
+          className={"text-[14px]"}
+          handle={() => navigate("/ADMIN")}
+        />
+      )}
       <NavButton
         label="PATNER LOGIN"
         className={"text-[14px]"}

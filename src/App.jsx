@@ -1,5 +1,11 @@
-import React from "react";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import AuthProvider from "./context/Auth";
 import HomeLayout from "./pages/home/HomeLayout";
 import JotaiProvider from "./providers/JotaiProvider";
@@ -22,8 +28,12 @@ import Manage from "./pages/admin/manage/Manage";
 import AddUser from "./pages/admin/manage/AddUser";
 import Edit from "./pages/admin/manage/Edit";
 import View from "./pages/admin/manage/View";
+import { useAtom } from "jotai";
+import { tokenAtom } from "./store/index";
 const App = () => {
-  // const {  } = useAuthContext();
+  const [token, setToken] = useAtom(tokenAtom);
+  console.log(token);
+
   return (
     <>
       <JotaiProvider>
@@ -51,6 +61,7 @@ const App = () => {
                   element={<ContactUs />}
                 />
               </Route>
+
               <Route
                 path="/homepage"
                 element={<HomeLayout />}
@@ -80,6 +91,7 @@ const App = () => {
                   element={<AccountInfo />}
                 />
               </Route>
+
               <Route
                 path="/admin"
                 element={<AdminLayout />}

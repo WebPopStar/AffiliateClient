@@ -2,12 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import { CHANGEPSD, GETTIME, LOGIN, REGISTER } from "../constant/api";
 import { useAtom } from "jotai";
-import { timeAtom, tokenAtom } from "../store/index";
+import { idAtom, timeAtom, tokenAtom } from "../store/index";
 import { useNavigate } from "react-router";
 const UseApi = () => {
   // operation characteristics
   const [, setTime] = useAtom(timeAtom);
   const [, setToken] = useAtom(tokenAtom);
+  const [, setId] = useAtom(idAtom);
   const [op, setOp] = useState({
     appErr: null,
     servreErr: null,
@@ -33,7 +34,8 @@ const UseApi = () => {
       console.log(data);
       localStorage.setItem("token", data.token);
       setToken(data.token);
-      input.role ? navigate("/admin/manage") : navigate("/");
+      setId(data.id);
+      input.role ? navigate("/admin/manage") : navigate("/login");
     } catch (error) {
       setOp({
         appErr: error?.response?.data?.message,
@@ -49,6 +51,7 @@ const UseApi = () => {
       setToken(data.token);
       setCookie();
       GetTime();
+      setId("");
     } catch (error) {
       setOp({
         appErr: error?.response?.data?.message,
@@ -58,7 +61,7 @@ const UseApi = () => {
     }
   };
   const GetTime = async () => {
-    try {   
+    try {
       const { data } = await axios.get(GETTIME, postConfig);
       setTime(data);
       // console.log('-------+++++++++++',data)

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useAtom } from "jotai";
+import { useNavigate, useLocation, Navigate } from "react-router-dom";
+import { atom, useAtom } from "jotai";
 import { tokenAtom } from "../store/index";
 import UseApi from "../hooks/useApi";
 
@@ -22,13 +22,22 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     setToken(token);
-    if (!token) {
-      // navigate("/login");
-    }
     if (location.pathname == "/admin/manage/view") {
       GetTime();
     }
   }, [navigate, location]);
+  // remove the token when close the browser
+  useEffect(() => {
+    const handleBeforeUnload = (event) => {
+      // Your logic here
+      localStorage.removeItem("token");
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
   return (
     <AuthContext.Provider value={{ dData }}>{children}</AuthContext.Provider>
   );

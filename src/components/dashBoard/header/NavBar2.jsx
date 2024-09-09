@@ -1,8 +1,11 @@
 import React from "react";
 import NavButton from "./NavButton";
 import { useNavigate } from "react-router";
+import { useAtom } from "jotai";
+import { tokenAtom } from "../../../store";
 const NavBar2 = () => {
   const navigate = useNavigate();
+  const [token] = useAtom(tokenAtom);
   return (
     <nav className=" flex flex-wrap justify-between items-center">
       <div>
@@ -18,11 +21,13 @@ const NavBar2 = () => {
           className={"text-[13px] font-semibold"}
           handle={() => navigate("/homepage")}
         />
-        <NavButton
-          label="ADMIN"
-          className={"text-[13px] font-semibold"}
-          handle={() => navigate("/admin")}
-        />
+        {token && (
+          <NavButton
+            label="ADMIN"
+            className={"text-[13px] font-semibold"}
+            handle={() => navigate("/admin")}
+          />
+        )}
         <NavButton
           label="CONTACT US"
           className={"text-[13px] font-semibold"}
